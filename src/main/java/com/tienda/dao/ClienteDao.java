@@ -9,4 +9,8 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface ClienteDao extends CrudRepository<Cliente, Long>{
     
+
+//Darle "CTRL" y darle click a "CrudRepository"
+    
+    
 }

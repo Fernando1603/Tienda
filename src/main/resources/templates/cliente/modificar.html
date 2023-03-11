@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>TechShop</title>
+        <meta charset="UTF-8">
+        <link href="../../static/css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <h1>Datos de clientes</h1>
+        <header th:replace="layout/plantilla :: header"/>
+        <div class="contenido">
+            <h2> Datos de Cliente</h2><!-- comment -->
         <br/>
         <a th:href="@{/}">Regresar</a>
         <br/>
@@ -16,7 +16,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         
         <!-- Esto es para la parte de modificar -->
         
-        <form th:action="@{/guardarCliente}"
+        <form th:action="@{/cliente/guardar}"
               method="POST"
               th:object="${cliente}">
             <input type="hidden" name="idCliente" th:field="*{idCliente}"/>
@@ -32,9 +32,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <label for="telefono">Telefono</label><br/>
             <input type="text" name="telefono" th:field="*{telefono}"/><br/><br/>
             
+            <label for="limite">Limite de Credito</label><br/>
+            <input type="number" name="limite" th:field="*{credito.limite}"/><br/><br/>
+            
             <input type="submit" name="Guardar" value="Guardar"/>
                 
         </form>
-        <footer th:replace="layout/plantilla :: footer"/>
     </body>
 </html>

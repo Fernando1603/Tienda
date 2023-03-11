@@ -4,13 +4,10 @@
  */
 package com.tienda.domain;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import lombok.Data;
@@ -21,33 +18,29 @@ import lombok.Data;
  */
 @Data
 @Entity
-@Table(name="cliente")
-
-public class Cliente implements Serializable{
+@Table(name="categoria")
+public class Categoria implements Serializable {
     
     private static final long seriaVersionUID= 1L;
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCliente; // Transforma en id_cliente
-    String nombre;
-    String apellidos;
-    String correo;
-    String telefono;
-    
-    @JoinColumn(name="id_credito", referencedColumnName="id_credito")
-    @ManyToOne
-    private Credito credito;
-    
-   
-    public Cliente() {
+    private Long idCategoria; 
+    private String descripcion;
+    private boolean activo;
+
+    public Categoria() {
     }
 
-    public Cliente(String nombre, String apellidos, String correo, String telefono) {
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.correo = correo;
-        this.telefono = telefono;
+    public Categoria(Long idCategoria, String descripcion, boolean activo) {
+        this.idCategoria = idCategoria;
+        this.descripcion = descripcion;
+        this.activo = activo;
     }
+
+  
+    
+    
+    
     
 }
