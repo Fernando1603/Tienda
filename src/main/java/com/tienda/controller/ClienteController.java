@@ -14,6 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -59,8 +61,12 @@ public class ClienteController {
         clienteService.delete(cliente);
         return "redirect:/cliente/listado";
     }
+    @RequestMapping(value = "cliente/consulta", method= RequestMethod.GET)
+    public String consulta(@RequestParam (value= "apellidos", required =false) String apellidos, Model model){
+        model.addAttribute("cliente", clienteService.consulta(apellidos));
+        return "cliente/consulta";
 
-        
+    }
         
     
       

@@ -5,6 +5,7 @@
 package com.tienda.dao;
 
 import com.tienda.domain.Credito;
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -12,5 +13,5 @@ import org.springframework.data.repository.CrudRepository;
  * @author Fernando
  */
 public interface CreditoDao extends CrudRepository<Credito, Long>{
-    
+
 }
