@@ -84,4 +84,5 @@
     left: 0;
     width: 100%;
     overflow: auto;
+    padding-left: 10px;
 }
