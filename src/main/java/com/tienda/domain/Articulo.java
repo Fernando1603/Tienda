@@ -4,6 +4,8 @@
  */
 package com.tienda.domain;
 
+import static com.fasterxml.jackson.databind.util.ClassUtil.name;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -25,6 +27,7 @@ public class Articulo implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_articulo")
     private Long idArticulo; // Transforma en id_cliente
     private Long idCategoria;
     private String descripcion;

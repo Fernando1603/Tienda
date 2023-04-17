@@ -21,7 +21,7 @@ import lombok.Data;
 @Entity
 @Table(name="credito")
 public class Credito implements Serializable {
-    private static final long seriaVersionUID= 1L;
+    private static final long serialVersionUID = 1L;
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
